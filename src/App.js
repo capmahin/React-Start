@@ -12,30 +12,32 @@ const singerStyle= {
 function App() {
   return (
     <div className="App">
-      <Parson></Parson>
-      <Parson></Parson>
-      <Parson></Parson>
+      <Parson name='Tamim' work="batsman"></Parson>
+      <Parson name='Mosaddak' work="All-Rounder"></Parson>
+      <Parson name='Mustafizur' work='Bowler'></Parson>
       <h3>New component</h3>
-      <Friend></Friend>
-      <Friend></Friend>
+      <Friend movie='Murder' phone="018234355"></Friend>
+      <Friend movie="Murder2" phone="019897675"></Friend>
       <Friend></Friend>
     </div>
   );
 }
 
-function Parson(){
+function Parson(props){
+  console.log(props);
   return(
     <div className='parson'>
-      <h1>Sakib Al hassan</h1>
-      <p>Profession : cricketer</p>
+      <h1>{props.name}</h1>
+      <p>Profession : {props.work}</p>
     </div>
   )
 }
-function Friend(){
+function Friend(props){
+  console.log(props)
   return(
     <div className='container'>
-      <h1>BanglaKAku</h1>
-      <p>Profession: killer</p>
+      <h1>{props.phone}</h1>
+      <p>Movie: {props.movie}</p>
     </div>
   )
 }
